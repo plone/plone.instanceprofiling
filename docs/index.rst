@@ -1,0 +1,5 @@
+====================
+plone.instanceprofiling
+====================
+
+User documentation
