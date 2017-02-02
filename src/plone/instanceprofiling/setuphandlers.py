@@ -6,7 +6,7 @@ from collective.loremipsum.utils import create_subobjects
 def post_install(context):
     """Post install script"""
     portal = getSite()
-	import pdb; pdb.set_trace()
+    import pdb; pdb.set_trace()
     create_subobjects(
         portal,
         portal,
