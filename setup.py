@@ -38,7 +38,8 @@ setup(
     zip_safe=False,
     install_requires=[
         'plone.api',
-        'collective.loremipsum',
+        # 'collective.loremipsum',
+        'collective.contentcreator',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
     ],
