@@ -29,19 +29,3 @@ def post_install(context):
         default_lang='en',
         default_wf_action='publish'
     )
-
-    """
-    from collective.loremipsum.utils import create_subobjects
-    create_subobjects(
-        portal,
-        portal,
-        {
-           'portal_type': ['Document', 'News Item', 'Event'],
-           'amount': 100,
-           'recurse': True,
-           'recursion_depth': 3,
-           'recurse_same_ptypes': True,
-           'publish': True,
-        }
-    )
-    """
