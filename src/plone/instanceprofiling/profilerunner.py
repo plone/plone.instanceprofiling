@@ -23,4 +23,9 @@ def profilerunner():
     print("Minimum request time: {0}".format(min(times)))
     print("Maximum request time: {0}".format(max(times)))
     print("Average request time: {0}".format(sum(times) / (cnt + 1)))
+    print("Median request time: {0}".format(sorted(times)[int(round(len(times) / 2))]))  # noqa
     print("Total running time: {0}".format(sum(times)))
+
+
+if __name__ == '__main__':
+    profilerunner()
