@@ -1,2 +1,5 @@
 uwsgi
 requests
+locustio
+pyquery
+BeautifulSoup
