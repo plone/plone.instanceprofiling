@@ -1,69 +1,92 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
 =======================
 plone.instanceprofiling
 =======================
 
-Tell me what your product does
-
-Features
---------
-
-- Can be bullet points
+Profile Plone requests.
 
 
-Examples
---------
+How to run for Zope 4, ZServer
+==============================
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+1) Initialize buildout: ``./bootstrap.sh``.
 
+2) Run buildout for Zope 4: ``./bin/buildout -c buildout-zope4.cfg``.
 
-Documentation
--------------
+3) Start Zope: ``./bin/instance fg``.
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+4) Import the ``plone.instanceprofiling:default`` profile to create the contents.
 
+5) Visit ``http://localhost:8080/Plone`` to initialize all Zope caches.
 
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+6) Run ``./bin/instanceprofiling`` to start profiling.
 
 
-Installation
-------------
+How to run for Zope 4, uwsgi
+-----------------------------
 
-Install plone.instanceprofiling by adding it to your buildout::
+1) Initialize buildout: ``./bootstrap.sh``.
 
-    [buildout]
+2) Run buildout for Zope 4: ``./bin/buildout -c buildout-zope4.cfg``.
 
-    ...
+3) Install uwsgi and requests via: ``./bin/pip install -r requirements.txt``.
 
-    eggs =
-        plone.instanceprofiling
+4) Start Zope via uwsgi: ``./bin/uwsgi --ini etc/uwsgi.ini``.
 
+4) Import the ``plone.instanceprofiling:default`` profile to create the contents.
 
-and then running ``bin/buildout``
+5) Visit ``http://localhost:8080/Plone`` to initialize all Zope caches.
 
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/plone.instanceprofiling/issues
-- Source Code: https://github.com/collective/plone.instanceprofiling
-- Documentation: https://docs.plone.org/foo/bar
+6) Run ``./bin/python src/plone/instanceprofiling/profilerunner.py`` to start profiling.
 
 
-Support
--------
+How to run for Zope 2, ZServer
+==============================
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+1) Initialize buildout: ``./bootstrap.sh``.
+
+2) Run buildout for Zope 4: ``./bin/buildout -c buildout-zope2.cfg``.
+
+3) Start Zope: ``./bin/instance fg``.
+
+4) Import the ``plone.instanceprofiling:default`` profile to create the contents.
+
+5) Visit ``http://localhost:8080/Plone`` to initialize all Zope caches.
+
+6) Run ``./bin/instanceprofiling`` to start profiling.
+
+
+Example test run results
+========================
+
+
+Test run with Plone 5.1 on Zope 4 and ZServer
+---------------------------------------------
+
+Minimum request time: 0.190841913223
+Maximum request time: 0.404036045074
+Average request time: 0.250301946131
+Median request time: 0.247586965561
+Total running time: 100.371080399
+
+
+Test run with Plone 5.1 on Zope 4 and uwsgi
+-------------------------------------------
+
+Minimum request time: 0.144521951675
+Maximum request time: 0.380453824997
+Average request time: 0.226307987275
+Median request time: 0.226958990097
+Total running time: 90.7495028973
+
+
+Test run with Plone 5.1 on Zope 2 and ZServer
+---------------------------------------------
+
+Minimum request time: 0.587725162506
+Maximum request time: 0.817272901535
+Average request time: 0.672410908483
+Median request time: 0.649533033371
+Total running time: 269.636774302
 
 
 License

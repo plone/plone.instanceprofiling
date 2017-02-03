@@ -4,4 +4,3 @@
 rm -r ./lib ./include ./local ./bin
 virtualenv --clear .
 ./bin/pip install --upgrade pip setuptools zc.buildout
-./bin/buildout -c buildout-zope4.cfg
