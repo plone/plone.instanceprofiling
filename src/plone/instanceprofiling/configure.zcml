@@ -1,8 +1,16 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
   <includeDependencies package="." />
+
+  <browser:page
+      name="content_urls"
+      class=".views.ContentUrlsView"
+      permission="zope2.View"
+      for="*"
+      />
 
   <genericsetup:registerProfile
       name="default"
