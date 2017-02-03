@@ -29,21 +29,25 @@ class WebsiteTasks(TaskSet):
 
     @task
     def index(self):
-        # url = random.choice(self.content_urls)
-        url = "/"
+        url = random.choice(self.content_urls)
+        # url = "/"
 
         ret = self.client.get(url)
-        html = BeautifulSoup(ret.content)
-        pq = PyQuery(html.prettify())
 
-        css = pq('link[rel="stylesheet"]')
-        self._load_resources(css, 'href')
+        # That shit doesn't work. pq('html') doesn't find anything.
+        # Using BeautifulSoup's prettifier doesn't help either.
 
-        js = pq('script')
-        self._load_resources(js, 'src')
+        # html = BeautifulSoup(ret.content)
+        # pq = PyQuery(html.prettify())
 
-        imgs = pq('img')
-        self._load_resources(imgs, 'src')
+        # css = pq('link[rel="stylesheet"]')
+        # self._load_resources(css, 'href')
+
+        # js = pq('script')
+        # self._load_resources(js, 'src')
+
+        # imgs = pq('img')
+        # self._load_resources(imgs, 'src')
 
 
 class WebsiteUser(HttpLocust):
