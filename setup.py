@@ -37,13 +37,14 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'plone.api',
-        'collective.contentcreator',
         'Products.GenericSetup>=1.8.2',
+        'collective.contentcreator',
+        'plone.api',
+        'requests',
         'setuptools',
     ],
-    entry_points="""
-    [z3c.autoinclude.plugin]
-    target = plone
-    """,
+    entry_points={
+        'z3c.autoinclude.plugin': 'target = plone',
+        'console_scripts': ['instanceprofiling=plone.instanceprofiling.profilerunner:profilerunner'],  # noqa
+    }
 )
