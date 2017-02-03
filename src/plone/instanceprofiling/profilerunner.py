@@ -8,9 +8,6 @@ CONTENT_URLS_URL = 'http://localhost:8080/Plone/@@content_urls'
 
 def profilerunner():
 
-    import pdb
-    pdb.set_trace()
-
     content_urls = requests.get(CONTENT_URLS_URL)
     content_urls = json.loads(content_urls.text)
 
