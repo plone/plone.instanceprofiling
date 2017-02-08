@@ -21,4 +21,11 @@
       post_handler=".setuphandlers.post_install"
       />
 
+  <browser:page
+      name="content_time"
+      class=".views.ContentTimeView"
+      permission="zope2.View"
+      for="*"
+      />
+
 </configure>
