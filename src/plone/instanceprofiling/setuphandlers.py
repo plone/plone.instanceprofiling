@@ -15,7 +15,7 @@ def post_install(context):
     for cnt in range(400):
         content_structure.append(
             {
-                "type": "Document",
+                "@type": "Document",
                 "title": "Document " + str(cnt),
                 "data": {
                     "description": "Some thing."
